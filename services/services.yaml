@@ -9,7 +9,7 @@ spec:
   ports:
     - name: http
       port: 5000
-      nodePort: 30080
+      nodePort: 30081
 
   type: NodePort
 
@@ -22,5 +22,5 @@ spec:
   selector:
     app: db
   ports:
-  - port: 5432
+    - port: 5432
   type: ClusterIP

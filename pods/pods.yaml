@@ -6,13 +6,17 @@ metadata:
     app: api
 spec:
   containers:
-  - name: api
-    image: testmailt46/simple-flask-api:version1.7
-    env:
-      - name: POSTGRES_HOSTNAME
-        value: postgres
-      - name: SQLALCHEMY_DATABASE_URI
-        value: postgresql+psycopg2://test:test@db/test
+    - name: api
+      image: testmailt46/simple-flask-api:version1.9
+      env:
+        - name: POSTGRES_HOSTNAME
+          value: database.default.svc.cluster.local
+        - name: POSTGRES_USER
+          value: test
+        - name: POSTGRES_PASSWORD
+          value: test
+        - name: POSTGRES_DB
+          value: test
 
 ---
 apiVersion: v1
@@ -23,12 +27,12 @@ metadata:
     app: db
 spec:
   containers:
-   - name: db
-     image: postgres
-     env:
-      - name: POSTGRES_USER
-        value: test
-      - name: POSTGRES_PASSWORD
-        value: test
-      - name: POSTGRES_DB
-        value: test
+    - name: db
+      image: postgres
+      env:
+        - name: POSTGRES_USER
+          value: test
+        - name: POSTGRES_PASSWORD
+          value: test
+        - name: POSTGRES_DB
+          value: test

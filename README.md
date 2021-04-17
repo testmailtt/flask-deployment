@@ -47,3 +47,16 @@ kubectl decribe pod api
 ```
 minikube ip
 ```
+
+# kubectl delete
+
+```
+kubectl delete --all pods
+kubectl delete --all services
+```
+
+
+# Migrate db
+```
+kubectl exec api -- python manage.py create_db
+```
