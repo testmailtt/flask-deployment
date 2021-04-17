@@ -1,3 +1,11 @@
+# Steps for full deployment
+```
+kubectl apply -f .\pods\pods.yaml
+kubectl apply -f .\services\services.yaml
+kubectl get all
+kubectl exec api -- python manage.py create_db
+```
+
 # Deploy pods
 
 ```
