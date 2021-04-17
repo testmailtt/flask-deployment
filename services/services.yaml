@@ -20,7 +20,7 @@ metadata:
   name: database
 spec:
   selector:
-    app: postgres
+    app: db
   ports:
   - port: 5432
   type: ClusterIP

@@ -8,17 +8,22 @@ spec:
   containers:
   - name: api
     image: testmailt46/simple-flask-api:version1.7
+    env:
+      - name: POSTGRES_HOSTNAME
+        value: postgres
+      - name: SQLALCHEMY_DATABASE_URI
+        value: postgresql+psycopg2://test:test@db/test
 
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: postgres
+  name: db
   labels:
-    app: postgres
+    app: db
 spec:
   containers:
-   - name: postgres
+   - name: db
      image: postgres
      env:
       - name: POSTGRES_USER
