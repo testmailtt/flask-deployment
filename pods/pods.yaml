@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api
+  labels:
+    app: api
+spec:
+  containers:
+  - name: api
+    image: testmailt46/simple-flask-api:version1.7
+
