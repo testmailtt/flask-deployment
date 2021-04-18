@@ -9,9 +9,8 @@ spec:
   ports:
     - name: http
       port: 5000
-      nodePort: 30082
 
-  type: NodePort
+  type: LoadBalancer
 
 ---
 kind: Service
